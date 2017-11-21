@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  </head>
-  <body>
-    <%- body %>
-  </body>
-</html>
+<head>
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="/javascripts/rss-feed.js" charset="utf-8"></script>
+</head>
+<body>
+  <header>
+    <h1>Coinscape</h1>
+    <% if (currentUser) { %>
+      <p> Welcome back, <%= currentUser.email %> </p>
+      <% } %>
+      <nav>
+        <ul>
+          <a href="/"> Home </a>
+          <% if (currentUser) { %>
+            <a href="/settings"> Edit Profile </a>
+            <a href="/logout"> Log Out </a>
+            <% } else { %>
+              <a href="/signup"> Sign Up </a>
+              <a href="/login"> Log In </a>
+              <% } %>
+            </ul>
+          </nav>
+        </header>
+        <%- body %>
+      </body>
+      </html>

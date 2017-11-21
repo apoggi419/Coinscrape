@@ -1,0 +1,22 @@
+<h2> Sign Up </h2>
+
+<% if (typeof errorMessage !== "undefined") { %>
+  <p class="error-message">
+    <%= errorMessage %>
+  </p>
+<% } %>
+
+<form id="form" method="post" action="/process-signup">
+  <input  id="email-input" type="email" placeholder="Enter your email"
+      name="signupEmail" />
+  <br />
+  <input  id="password-input" type="password" placeholder="Enter your password"
+      name="signupPassword" />
+  <br />
+  <button> Sign Up </button>
+</form>
+
+<p>
+  Already have an account?
+  <a href="/login"> Log In </a>
+</p>
